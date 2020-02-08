@@ -281,6 +281,22 @@ textarea.form-control {
 	font-size: 18px;
 }
 
+.pfblock-subtitle-list {
+	font-family: Raleway, "Times New Roman", Times, sans-serif;
+	font-style: normal;
+	font-size: 18px;
+	text-align: left;
+}
+
+.list-title {
+	font-weight: 500;
+}
+
+.pfblock-subtitle-list ul {
+	list-style-type: none;
+	padding-left: 20px;
+}
+
 .pfblock-line {
 	background: rgba(135, 135, 135, 0.5);
 	width: 100px;
@@ -496,12 +512,12 @@ textarea.form-control {
 	display: block;
 	line-height: 35px;
 	text-align: center;
-	border: 1px solid rgba(255, 255, 255, .1);
+	border: 1px solid rgba(255, 255, 255, .3);
 	-webkit-border-radius: 3px;
 	   -moz-border-radius: 3px;
 			border-radius: 3px;
 	font-size: 14px;
-	color: rgba(255, 255, 255, .2);
+	color: rgba(255, 255, 255, .3);
 }
 
 .social-links a:hover {
