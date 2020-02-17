@@ -7,6 +7,12 @@
 	<meta name="author" content="">
 
 	<title>Samuele Zaza - Portfolio</title>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"></script>
+	<script type="text/javascript">
+			(function(){
+					emailjs.init('user_1rv1LGiDaAwZsd8D3gDMB');
+			})();
+	</script>
 
 	<!-- CSS -->
 	<link href="https://fonts.googleapis.com/css?family=Raleway:400,300,500,700,800" rel="stylesheet">
@@ -480,8 +486,6 @@
 						<div class="pfblock-subtitle">
 							Are you looking for an experienced software developer to give life to the greatest web app? Look no further!
 						</div>
-						<br />
-						<div class="pfblock-subtitle"><a href="mailto:zaza.samuele@gmail.com">Click here</a> to send me an e-mail or reach me out at <b>zaza.samuele@gmail.com</b></a></div>
 					</div>
 
 				</div>
@@ -491,28 +495,27 @@
 			<div class="row">
 
 				<div class="col-sm-6 col-sm-offset-3">
-					<!--
 					<form id="contact-form" role="form">
 						<div class="ajax-hidden">
 							<div class="form-group wow fadeInUp">
 								<label class="sr-only" for="c_name">Name</label>
-								<input type="text" id="c_name" class="form-control" name="c_name" placeholder="Name">
+								<input type="text" id="c_name" class="form-control" name="name" placeholder="Name">
 							</div>
 
 							<div class="form-group wow fadeInUp" data-wow-delay=".1s">
 								<label class="sr-only" for="c_email">Email</label>
-								<input type="email" id="c_email" class="form-control" name="c_email" placeholder="E-mail">
+								<input type="email" id="c_email" class="form-control" name="email" placeholder="E-mail">
 							</div>
 
 							<div class="form-group wow fadeInUp" data-wow-delay=".2s">
-								<textarea class="form-control" id="c_message" name="c_message" rows="7" placeholder="Message"></textarea>
+								<textarea class="form-control" id="c_message" name="message" rows="7" placeholder="Message"></textarea>
 							</div>
 
 							<button type="submit" class="btn btn-lg btn-block wow fadeInUp" data-wow-delay=".3s">Send!</button>
 						</div>
 						<div class="ajax-response"></div>
 					</form>
-				-->
+				
 				</div>
 
 			</div><!-- .row -->
@@ -568,10 +571,24 @@
 	<script src="assets/js/jquery.sticky.js"></script>
 	<script src="assets/js/smoothscroll.js"></script>
 	<script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/jquery.easypiechart.js"></script>
-    <script src="assets/js/waypoints.min.js"></script>
-    <script src="assets/js/jquery.cbpQTRotator.js"></script>
+  <script src="assets/js/jquery.easypiechart.js"></script>
+  <script src="assets/js/waypoints.min.js"></script>
+  <script src="assets/js/jquery.cbpQTRotator.js"></script>
 	<script src="assets/js/custom.js"></script>
+	<script type="text/javascript">
+			window.onload = function() {
+					document.getElementById('contact-form').addEventListener('submit', function(event) {
+							event.preventDefault();
+							emailjs.sendForm('contact_service', 'contact_template', this).then(function() {
+								$('#contact-form .ajax-response').html('<span class="email-success">Thank you, I will reply you ASAP!</span>').fadeIn(500);
+								// alert('Your mail is sent!');
+							})
+							.catch(function(error) {
+								alert('Oops... ' + JSON.stringify(error));
+							});
+					});
+			}
+	</script>
 
 </body>
 </html>

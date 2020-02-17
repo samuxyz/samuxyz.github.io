@@ -985,3 +985,9 @@ figure.effect-bubba:hover p {
 
 }
 
+.email-success {
+	display: inline-block;
+	margin-top: 20px;
+	color: green;
+}
+
